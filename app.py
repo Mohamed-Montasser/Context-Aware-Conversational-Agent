@@ -59,7 +59,13 @@ if prompt := st.chat_input("Ask me anything..."):
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             response = agent.invoke(prompt)
-            st.markdown(response)
+            if isinstance(response, dict) and "output" in response:
+                final_answer = response["output"]
+            else:
+                final_answer = str(response)
+            
+            st.markdown(final_answer)
+
 
     # Save response to history
     st.session_state.messages.append({"role": "assistant", "content": response})
