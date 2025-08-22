@@ -1,0 +1,8 @@
+Split the following user message into:
+1. Background context (empty if none)  
+2. The actual question  
+
+Return JSON only with these exact field names:
+{"context": "", "question": ""}
+
+Message: {input}

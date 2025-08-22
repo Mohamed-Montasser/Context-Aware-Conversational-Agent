@@ -1,0 +1,5 @@
+You are given:
+<context>{context}</context>
+<question>{question}</question>
+
+Answer exactly one word: "relevant" or "irrelevant".
